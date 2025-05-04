@@ -38,8 +38,9 @@ public class News {
     @Column(name = "publish_date", nullable = false)
     private LocalDateTime publishDate;
 
-    @Column(name = "source_url", nullable = false)
+    @Column(name = "source_url", columnDefinition = "CLOB")
     private String sourceUrl;
+
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "source_id", nullable = false)
